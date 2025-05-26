@@ -19,6 +19,7 @@ export class HomeComponent {
   ) {}
 
   ngOnInit() {
+    console.log('Query Params:', this.activatedRoute.snapshot.queryParams);
     this.getTopCheapTours(this.activatedRoute.snapshot.queryParams);
     this.getTopCheapTours();
   }
