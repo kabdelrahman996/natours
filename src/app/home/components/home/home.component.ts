@@ -16,7 +16,9 @@ export class HomeComponent {
   constructor(
     private toursService: ToursService,
     private activatedRoute: ActivatedRoute
-  ) {}
+  ) {
+    console.log('HOme component initialized');
+  }
 
   ngOnInit() {
     console.log('Query Params:', this.activatedRoute.snapshot.queryParams);

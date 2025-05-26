@@ -57,8 +57,14 @@ export class ToursService {
 
   // Statistics
   getTopCheapTours(queryParams?: any) {
+    let params = new HttpParams();
+    if (queryParams) {
+      Object.keys(queryParams).forEach((key) => {
+        params = params.set(key, queryParams[key]);
+      });
+    }
     return this.http.get(`${this.apiUrl}/tours/top-5-cheap`, {
-      params: queryParams,
+      params,
     });
   }
 
