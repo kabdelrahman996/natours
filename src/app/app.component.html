@@ -1,0 +1,15 @@
+<app-header></app-header>
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>
+<app-footer></app-footer>
+
+<!-- Scroll to Top Button -->
+<button
+  class="scroll-to-top"
+  (click)="scrollToTop()"
+  *ngIf="showScrollButton"
+  aria-label="ارجع للأعلى"
+>
+  ↑
+</button>
