@@ -56,8 +56,10 @@ export class ToursService {
   }
 
   // Statistics
-  getTopCheapTours() {
-    return this.http.get(`${this.apiUrl}/tours/top-5-cheap`);
+  getTopCheapTours(queryParams?: any) {
+    return this.http.get(`${this.apiUrl}/tours/top-5-cheap`, {
+      params: queryParams,
+    });
   }
 
   getTourStats() {
