@@ -2,6 +2,8 @@
   text-align: center;
   color: #26a69a;
   margin-bottom: 3rem;
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
 /* أنماط كاروسيل الأسطوانة الدوارة */
@@ -93,6 +95,8 @@
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .tour-title {
@@ -101,6 +105,8 @@
   color: #3c4b64;
   margin: 0;
   padding-left: 15px;
+  flex: 1;
+  min-width: 0;
 }
 
 .tour-price {
@@ -111,6 +117,7 @@
   font-weight: 700;
   font-size: 0.9rem;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .tour-difficulty {
@@ -153,11 +160,14 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .guide-avatars {
   display: flex;
   position: relative;
+  flex-shrink: 0;
 }
 
 .guide-avatar-wrapper {
@@ -185,29 +195,228 @@
   font-size: 0.85rem;
   color: #6c757d;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
-/* تحسينات للأجهزة المحمولة */
-@media (max-width: 767px) {
+/* Controls Styling */
+.card-header .btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+/* Tablet Responsive */
+@media (max-width: 1200px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+
   .cylinder-carousel-container {
-    height: 400px;
+    height: 600px;
+  }
+
+  .cylinder {
+    width: 280px;
+    height: 380px;
+  }
+
+  .cylinder-card {
+    width: 280px;
+    height: 380px;
+  }
+
+  .cylinder-card-content {
+    padding: 1.3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .cylinder-carousel-container {
+    height: 550px;
   }
 
   .cylinder {
     width: 260px;
-    height: 350px;
+    height: 360px;
   }
 
   .cylinder-card {
     width: 260px;
-    height: 350px;
+    height: 360px;
   }
 
   .tour-title {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .tour-summary {
     -webkit-line-clamp: 4;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .cylinder-carousel-container {
+    height: 450px;
+    perspective: 1000px;
+  }
+
+  .cylinder {
+    width: 240px;
+    height: 320px;
+  }
+
+  .cylinder-card {
+    width: 240px;
+    height: 320px;
+  }
+
+  .cylinder-card-content {
+    padding: 1rem;
+  }
+
+  .tour-rank {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+    top: -8px;
+    right: -8px;
+  }
+
+  .tour-header {
+    margin-bottom: 0.8rem;
+  }
+
+  .tour-title {
+    font-size: 1rem;
+    padding-left: 10px;
+  }
+
+  .tour-price {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .tour-difficulty {
+    padding: 0.25rem 0.8rem;
+    font-size: 0.75rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .tour-summary {
+    font-size: 0.8rem;
+    -webkit-line-clamp: 3;
+  }
+
+  .tour-guides {
+    margin-top: 0.8rem;
+  }
+
+  .guide-avatar {
+    width: 30px;
+    height: 30px;
+  }
+
+  .guide-avatar-wrapper {
+    margin-left: -12px;
+  }
+
+  .guides-count {
+    font-size: 0.75rem;
+  }
+
+  /* Simplify controls for mobile */
+  .card-header .btn {
+    width: 35px;
+    height: 35px;
+    font-size: 0.8rem;
+  }
+
+  .card-header h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cylinder-carousel-container {
+    height: 400px;
+    perspective: 800px;
+  }
+
+  .cylinder {
+    width: 200px;
+    height: 280px;
+  }
+
+  .cylinder-card {
+    width: 200px;
+    height: 280px;
+  }
+
+  .cylinder-card-content {
+    padding: 0.8rem;
+  }
+
+  .tour-rank {
+    width: 28px;
+    height: 28px;
+    font-size: 0.7rem;
+    top: -6px;
+    right: -6px;
+  }
+
+  .tour-title {
+    font-size: 0.9rem;
+    padding-left: 8px;
+  }
+
+  .tour-price {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .tour-difficulty {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.7rem;
+    margin-bottom: 0.6rem;
+  }
+  .tour-summary {
+    font-size: 0.7rem;
+    -webkit-line-clamp: 2;
+  }
+  .tour-guides {
+    margin-top: 0.6rem;
+  }
+  .guide-avatar {
+    width: 24px;
+    height: 24px;
+  }
+  .guide-avatar-wrapper {
+    margin-left: -10px;
+  }
+  .guides-count {
+    font-size: 0.65rem;
+  }
+  /* Simplify controls for small mobile */
+  .card-header .btn {
+    width: 30px;
+    height: 30px;
+    font-size: 0.7rem;
   }
 }
