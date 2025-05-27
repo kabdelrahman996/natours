@@ -28,7 +28,7 @@ export class HomeComponent {
 
   getTopCheapTours(queryParams?: any): void {
     this.isLoading = true;
-    this.toursService.getTopCheapTours().subscribe((res: any) => {
+    this.toursService.getTopCheapTours(queryParams).subscribe((res: any) => {
       console.log('res', res);
       this.tours = res.data;
       console.log('Top cheap tours:', this.tours);
