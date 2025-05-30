@@ -13,35 +13,53 @@
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarNav"
+        aria-expanded="false"
+        aria-controls="navbarNav"
       >
         <i class="fas fa-bars"></i>
       </button>
 
       <!-- Navigation Items -->
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="collapse navbar-collapse" id="navbarNav" #navbarCollapse>
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/home']">
+            <a
+              class="nav-link"
+              [routerLink]="['/home']"
+              (click)="onNavLinkClick()"
+            >
               <i class="fas fa-home"></i>
-              الرئيسية
+              <span class="nav-text">الرئيسية</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/tours']">
+            <a
+              class="nav-link"
+              [routerLink]="['/tours']"
+              (click)="onNavLinkClick()"
+            >
               <i class="fas fa-map-marked-alt"></i>
-              الجولات السياحية
+              <span class="nav-text">الجولات السياحية</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/about']">
+            <a
+              class="nav-link"
+              [routerLink]="['/about']"
+              (click)="onNavLinkClick()"
+            >
               <i class="fas fa-info-circle"></i>
-              عن زُها
+              <span class="nav-text">عن زُها</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/contact']">
+            <a
+              class="nav-link"
+              [routerLink]="['/contact']"
+              (click)="onNavLinkClick()"
+            >
               <i class="fas fa-phone-alt"></i>
-              اتصل بنا
+              <span class="nav-text">اتصل بنا</span>
             </a>
           </li>
         </ul>
@@ -54,11 +72,17 @@
             aria-expanded="false"
           >
             <i class="fas fa-user-circle"></i>
-            {{ currentUser?.name || "الملف الشخصي" }}
+            <span class="profile-text">{{
+              currentUser?.name || "الملف الشخصي"
+            }}</span>
           </button>
           <ul class="dropdown-menu dropdown-menu-end">
             <li>
-              <a class="dropdown-item" [routerLink]="['/me']">
+              <a
+                class="dropdown-item"
+                [routerLink]="['/me']"
+                (click)="onNavLinkClick()"
+              >
                 <i class="fas fa-user"></i> الملف الشخصي
               </a>
             </li>
@@ -79,17 +103,19 @@
             *ngIf="!currentUser"
             class="btn btn-login"
             [routerLink]="['/login']"
+            (click)="onNavLinkClick()"
           >
             <i class="fas fa-sign-in-alt"></i>
-            تسجيل الدخول
+            <span class="btn-text">تسجيل الدخول</span>
           </button>
           <button
             [routerLink]="['/signup']"
             *ngIf="!currentUser"
             class="btn btn-register"
+            (click)="onNavLinkClick()"
           >
             <i class="fas fa-user-plus"></i>
-            حساب جديد
+            <span class="btn-text">حساب جديد</span>
           </button>
         </div>
       </div>
